@@ -14,7 +14,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
   phone: { type: String },
   address: { type: String },
   isCook: { type: Boolean, default: false },
@@ -22,15 +22,14 @@ const userSchema = new Schema({
     cuisine: {
       type: String,
       enum: CUISINE,
-      default: 'French'
     },
     experience: {
       type: String,
       enum: EXP,
-          }
+    },
     description: {type: String},
     location: {type: String},
-    availability: { type: Boolean, default: true },
+    availability: { type: Boolean },
   }
 });
 
