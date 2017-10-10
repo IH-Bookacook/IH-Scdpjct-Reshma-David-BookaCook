@@ -15,7 +15,7 @@ const passportSetup = require("./passport-setup");
 const indexController = require("./routes/index");
 const authController = require("./routes/auth");
 
-mongoose.connect("mongodb://localhost/TODO", {
+mongoose.connect("mongodb://localhost/bookacook", {
   useMongoClient: true
 });
 
@@ -26,7 +26,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.set("layout", "layouts/main-layout");
 app.use(expressLayouts);
-app.locals.title = "TODO";
+app.locals.title = "Book a Cook";
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(
   session({
-    secret: "TODO",
+    secret: "iamagoodcookandilovecooking",
     resave: false,
     saveUninitialized: true,
     sotre: new MongoStore({ mongooseConnection: mongoose.connection })

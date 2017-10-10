@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.use("/", (req, res) => {
+router.get("/", (req, res) => {
+  res.locals.title = "Welcome to Book a Cook";
   res.render("index");
 });
 
