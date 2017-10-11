@@ -1,4 +1,7 @@
+
+<link rel="stylesheet" href="./stylesheets/cooks-style.css">
 <h1>Our Cooks</h1>
+
 
 <% if (errorMessage) { %>
  <p class="error-message">
@@ -9,10 +12,10 @@
 <ul>
  <% cooks.forEach((cook) => { %>
    <li>
-     <!-- <h3> <%= cook.name %> </h3> -->
+
      <p> <%= cook.cuisine %> </p>
 
-     <a href="/cooks/<%= cook._id %>">
+     <a href="/cooks/<%= cook._id %>" style="color:#f2f2f2">
       <h3> <%= cook.name %> </h3>
      </a>
    </li>

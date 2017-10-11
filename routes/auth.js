@@ -19,7 +19,7 @@ router.get('/login',ensureLoggedOut, (req,res,next)=>{
 
 router.get('/logout', ensureLoggedIn, (req, res, next) => {
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 router.post('/signup',
