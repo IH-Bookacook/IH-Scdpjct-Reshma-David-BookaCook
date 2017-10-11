@@ -1,13 +1,40 @@
+<h3>Cook profile</h3>
 
-  <!DOCTYPE html>
-<html>
-<body>
+<h2>
+  <%= cook.name%>
+</h2>
 
-<h2>Spectacular Mountain</h2>
-<img src="pic_mountain.jpg" alt="Mountain View" style="width:304px;height:228px;">
-<p>Hey, My name is John. I am origin of Italy.since from childhood i loved to cook.I would like cook as per as person test.I am calm and that is the good think as a cook.</p>
+<div>
+  <h3>Cuisine:</h3>
+  <p>
+    <%= cook.cookData.cuisine%>
+  </p>
+</div>
 
-<button
+<div>
+  <h3>Experience:</h3>
+  <p>
+    <%= cook.cookData.experience%>
+  </p>
+</div>
 
-</body>
-</html>
+<div>
+  <h3>Description:</h3>
+  <p>
+    <%= cook.cookData.description%>
+  </p>
+</div>
+
+<div>
+  <h3>Location:</h3>
+  <p>
+    <%= cook.cookData.location%>
+  </p>
+</div>
+
+<div>
+  <h3>Availability:</h3>
+  <p>
+    <%= cook.cookData.availability%>
+  </p>
+</div>

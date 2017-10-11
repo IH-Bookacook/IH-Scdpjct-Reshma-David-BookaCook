@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const {ensureLoggedIn} = require('../middlewares/auth');
+const { ensureLoggedIn } = require("../middlewares/auth");
 
 router.get("/", (req, res, next) => {
   User.find(
@@ -18,22 +18,25 @@ router.get("/", (req, res, next) => {
   );
 });
 
-router.get('/.id', ensureLoggedIn, (res, req, next) => {
-      User.findOne({
-          _id: req.params.id,
-          isCook: true,
-        },
-        (err, cook) => {
-          if (err || !cook) {
-            req.flash('error', `There's no cook available with id ${req.params.id}`);
-            return res.redirect('/cooks');
-          }
-          res.render('cook-profile', {
-            cook: cook,
-          });
-        }
-      );
-        })
-
+router.get("/:id", ensureLoggedIn, (req, res, next) => {
+  User.findOne(
+    {
+      _id: req.params.id,
+      isCook: true
+    },
+    (err, cook) => {
+      if (err || !cook) {
+        req.flash(
+          "error",
+          `There's no cook available with id ${req.params.id}`
+        );
+        return res.redirect("/cooks");
+      }
+      res.render("cook-profile", {
+        cook: cook
+      });
+    }
+  );
+});
 
 module.exports = router;
