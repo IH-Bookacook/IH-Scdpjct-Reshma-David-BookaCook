@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const User = require('./models/user')
+const User = require("./models/user");
 
 passport.serializeUser((user, cb) => {
   cb(null, user.id);
@@ -29,7 +29,7 @@ passport.use(
       // To avoid race conditions
       process.nextTick(() => {
         // Destructure the body
-        const { name } = req.body;
+        const { name, address } = req.body;
         const hashPass = bcrypt.hashSync(
           password,
           bcrypt.genSaltSync(10),
@@ -38,6 +38,7 @@ passport.use(
         const user = new User({
           name,
           email,
+          address,
           password: hashPass
         });
 

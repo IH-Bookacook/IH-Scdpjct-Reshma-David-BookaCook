@@ -16,7 +16,7 @@ const bookingSchema = new Schema({
   },
   date: { type: Date, required: true },
   time: { type: String, required: true },
-  duration: {type: String, required: true}
+  duration: {type: String, required: true},
   numberOfPeople: { type: String, required: true },
   specRequirements : { type: String },
   price: { type: String, required: true },
@@ -25,6 +25,7 @@ const bookingSchema = new Schema({
     enum: STATUS,
     default: 'Pending'
   },
+  review: { type: String }
 })
 
 booking.set('timestamps', true);
