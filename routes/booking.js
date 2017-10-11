@@ -25,4 +25,21 @@ router.get("/:id/booking", ensureLoggedIn, (req, res) => {
   );
 });
 
+router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
+  const booking = new Booking({
+    customerId: req.user._id,
+    cookId: req.params.id,
+    date: req.body.date,
+    time: req.body.time,
+    duration: req.body.duration,
+    numberOfPeople: req.body.people,
+    specRequirements: req.body.special
+  });
+
+  booking.save(err => {
+    if (err) return next(err);
+    res.redirect("/cooks");
+  });
+});
+
 module.exports = router;

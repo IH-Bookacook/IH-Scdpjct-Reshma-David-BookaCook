@@ -19,7 +19,7 @@ const bookingSchema = new Schema({
   duration: { type: String, required: true },
   numberOfPeople: { type: String, required: true },
   specRequirements: { type: String },
-  price: { type: String, required: true },
+  price: { type: String },
   status: {
     type: String,
     enum: STATUS,
