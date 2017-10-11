@@ -12,6 +12,11 @@
   </div>
 
   <button> Log In </button>
+  <% if(errorMessage) { %>
+    <div class="error">
+      <%= errorMessage %>
+    </div>
+  <% } %>
 </form>
 
 <p>
