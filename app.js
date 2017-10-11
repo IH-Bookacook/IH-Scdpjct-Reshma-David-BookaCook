@@ -11,13 +11,13 @@ const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const passportSetup = require("./passport-setup");
 
-
 // controllers
 const indexController = require("./routes/index");
 const authController = require("./routes/auth");
 const cooksController = require("./routes/cooks");
 const becomecookController = require("./routes/becomecook");
 const ourcuisineController = require("./routes/ourcuisine");
+const bookingController = require("./routes/booking");
 
 mongoose.connect("mongodb://localhost/bookacook", {
   useMongoClient: true
@@ -53,9 +53,10 @@ passportSetup(app);
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexController);
 app.use("/", authController);
-app.use("/cooks",cooksController);
-app.use("/becomecook",becomecookController);
-app.use("/ourcuisine",ourcuisineController);
+app.use("/cooks", cooksController);
+app.use("/becomecook", becomecookController);
+app.use("/ourcuisine", ourcuisineController);
+app.use("/cooks", bookingController);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

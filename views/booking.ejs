@@ -1,0 +1,42 @@
+<h2>Book
+    <%= cook.name %>
+</h2>
+
+<form action="/cooks/<%= cook._id %>/booking" method="post">
+    <div>
+        <label for="booking-date-input">
+            When would you like to book the cook ?
+        </label>
+        <input type="date" name="date" id="booking-date-input">
+    </div>
+    <div>
+        <label for="booking-time-input">
+            When would you like the cook to start cooking ?
+        </label>
+        <input type="time" name="time" id="booking-time-input">
+    </div>
+    <div>
+        <label for="booking-time-input">
+            For how long would you like to book the cook ?
+        </label>
+        <input type="time" name="duration" id="booking-duration-input">
+    </div>
+    <div>
+        <label for="booking-number-input">
+            How many people will be eating ?
+        </label>
+        <input type="number" name="people" id="booking-time-input">
+    </div>
+    <div>
+        <label for="booking-special-input">
+            Any special request, please advise here
+        </label>
+        <input type="text" name="special" id="booking-time-input">
+    </div>
+    <button> Submit </button>
+</form>
+
+
+<form action="/cooks">
+    <input type="submit" value="Find another Cook" />
+</form>

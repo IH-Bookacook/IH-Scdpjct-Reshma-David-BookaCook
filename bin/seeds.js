@@ -65,7 +65,7 @@ User.remove({})
           cuisine: "French",
           experience: "less than 2 years",
           description:
-            "Passionate about cooking. I especially like to cook meats. You must taste my 'boeuf bourguigon' and my 'ratatouille provençale' !",
+            "Passionate about cooking. I am especially good at cooking meats. You must taste my 'boeuf bourguigon' and my 'ratatouille provençale' !",
           location: "Paris",
           availability: true
         }
@@ -81,7 +81,7 @@ User.remove({})
           cuisine: "Indian",
           experience: "more than 10 years",
           description:
-            "Graduated from the School of the Culinary Arts oh Andhra Pradesh, my special biryani recipe has been in the family for generations !",
+            "Graduated from the School of the Culinary Arts of Andhra Pradesh, my special biryani recipe has been in the family for generations !",
           location: "Paris",
           availability: true
         }
@@ -97,7 +97,7 @@ User.remove({})
           cuisine: "Italian",
           experience: "more than 10 years",
           description:
-            "As a member of the cooking team at the Cinecitta studio, Roma, I have had the privilege to cook for Marcello Mastroianni and Claudia Cardinale. Today I can bring taste and glamour to your kitchen",
+            "As a member of the cooking squadra at the Cinecitta studio, Roma, I have had the privilege to cook for Marcello Mastroianni and Claudia Cardinale. Today I can bring taste and glamour to your kitchen",
           location: "Paris",
           availability: true
         }
@@ -113,7 +113,7 @@ User.remove({})
           cuisine: "Chinese",
           experience: "more than 10 years",
           description:
-            "Born and bred in the Sichuan province, my cuisine is very spicy.",
+            "Born and raised in the Sichuan province, my cuisine is hot and spicy. I guarantee that you will also be impressed by my choping techniques.",
           location: "Paris",
           availability: true
         }
@@ -145,7 +145,7 @@ User.remove({})
           cuisine: "Mexican",
           experience: "less than 2 years",
           description:
-            "The Donald tasted my quesadillas and said : 'this one latino I won't deport'",
+            "The Donald tasted my quesadillas and said : 'this one latino I won't deport !'",
           location: "Lyon",
           availability: true
         }

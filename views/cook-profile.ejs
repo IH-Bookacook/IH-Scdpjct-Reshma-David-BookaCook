@@ -38,3 +38,7 @@
     <%= cook.cookData.availability%>
   </p>
 </div>
+
+<form action="/cooks/<%= cook._id %>/booking">
+  <input type="submit" value="Book this Cook !" />
+</form>
