@@ -1,1 +1,20 @@
-<h1>cooks</h1>
+<h1>Our Cooks</h1>
+
+<% if (errorMessage) { %>
+ <p class="error-message">
+   <%= errorMessage %>
+ </p>
+<% } %>
+
+<ul>
+ <% cooks.forEach((cook) => { %>
+   <li>
+     <!-- <h3> <%= cook.name %> </h3> -->
+     <p> <%= cook.cuisine %> </p>
+
+     <a href="/cooks/<%= cook._id %>">
+      <h3> <%= cook.name %> </h3>
+     </a>
+   </li>
+ <% }) %>
+</ul>
