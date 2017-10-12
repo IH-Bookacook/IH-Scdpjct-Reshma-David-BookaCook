@@ -5,7 +5,19 @@ body {
   font-size: 16px;
   color: rgb(245, 94, 97);
   text-align: left;
+<<<<<<< HEAD
   min-height: 100vh;
+=======
+
+}
+body {
+  background-image: url(../images/cookh.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+>>>>>>> 3de1a11faff3d07e4cebe9e34a0c41caf368c8ec
 }
 
 .topnav {
