@@ -19,7 +19,9 @@ router.get('/login',ensureLoggedOut, (req,res,next)=>{
 
 router.get('/logout', ensureLoggedIn, (req, res, next) => {
   req.logout();
-  res.redirect('/');
+  res.render('auth/logout',{
+    errorMessage: req.flash('error'),
+  });
 });
 
 router.post('/signup',
