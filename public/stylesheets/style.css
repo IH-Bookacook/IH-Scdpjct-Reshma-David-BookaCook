@@ -1,9 +1,9 @@
 body {
-  background-color: rgb(249,249,249);
-  margin:0;
-  font-family: 'Roboto', sans-serif;
+  background-color: rgb(249, 249, 249);
+  margin: 0;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: black;
+  color: rgb(245, 94, 97);
   text-align: left;
 }
 
@@ -16,7 +16,7 @@ body {
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: rgb(245, 94, 97);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -32,6 +32,6 @@ body {
 }
 
 .topnav a.active {
-    background-color: #637264;
-    color: white  ;
+  background-color: rgb(245, 94, 97);
+  color: white;
 }
