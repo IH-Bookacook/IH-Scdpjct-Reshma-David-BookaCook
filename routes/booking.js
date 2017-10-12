@@ -44,33 +44,36 @@ router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
         cook: booking.cook
       },
       {
-        $or: [{ dateStart: { $gte: booking.dateStart, $lte: booking.dateEnd } }]
+        $or: [
+          { dateStart: { $gte: booking.dateStart, $lte: booking.dateEnd } },
+          {
+            dateStart: { $lte: booking.dateStart },
+            dateEnd: { $gte: booking.dateStart }
+          }
+        ]
       }
     ]
   }).then(num => {
-    console.log("The cook is" + booking.cook);
-    console.log("The start date is" + booking.dateStart);
-    console.log("The end date is" + booking.dateEnd);
-    console.log("The number of conflicting bookings is " + num);
     if (num !== 0) {
-      message: "This cook is already book at that time";
+      // TODO use req.flash
+      console.error("This cook is already booked at that time");
+      res.redirect("/cooks/" + booking.cook);
     } else {
+      booking
+        .save()
+        .then(savedBooking => {
+          return savedBooking
+            .populate("customer")
+            .populate("cook")
+            .execPopulate();
+        })
+        .then(populatedBooking => {
+          res.render("booking-conf", {
+            booking: populatedBooking
+          });
+        });
     }
   });
-
-  booking
-    .save()
-    .then(savedBooking => {
-      return savedBooking
-        .populate("customer")
-        .populate("cook")
-        .execPopulate();
-    })
-    .then(populatedBooking => {
-      res.render("booking-conf", {
-        booking: populatedBooking
-      });
-    });
 });
 
 module.exports = router;
