@@ -7,19 +7,19 @@
         <label for="booking-date-input">
             When would you like to book the cook ?
         </label>
-        <input type="date" name="date" id="booking-date-input">
+        <input type="date" name="startDate" id="booking-date-input">
     </div>
     <div>
         <label for="booking-time-input">
-            When would you like the cook to start cooking ?
+            Beginning hour:
         </label>
-        <input type="time" name="time" id="booking-time-input">
+        <input type="time" name="startTime" id="booking-time-input">
     </div>
     <div>
         <label for="booking-time-input">
-            For how long would you like to book the cook ?
+            End hour: 
         </label>
-        <input type="time" name="duration" id="booking-duration-input">
+        <input type="time" name="endTime" id="booking-duration-input">
     </div>
     <div>
         <label for="booking-number-input">
@@ -29,13 +29,14 @@
     </div>
     <div>
         <label for="booking-special-input">
-            Any special request, please advise here
+            Any special request, please advise here:
         </label>
         <input type="text" name="special" id="booking-time-input">
     </div>
     <button> Submit </button>
 </form>
 
+<p><%= message%></p>
 
 <form action="/cooks">
     <input type="submit" value="Find another Cook" />

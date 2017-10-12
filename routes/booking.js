@@ -31,11 +31,31 @@ router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
   const booking = new Booking({
     customer: req.user._id,
     cook: req.params.id,
-    date: req.body.date,
-    time: req.body.time,
-    duration: req.body.duration,
+    dateStart: new Date(req.body.startDate + " " + req.body.startTime),
+    dateEnd: new Date(req.body.startDate + " " + req.body.endTime),
+    // duration: req.body.duration,
     numberOfPeople: req.body.people,
     specRequirements: req.body.special
+  });
+
+  Booking.count({
+    $and: [
+      {
+        cook: booking.cook
+      },
+      {
+        $or: [{ dateStart: { $gte: booking.dateStart, $lte: booking.dateEnd } }]
+      }
+    ]
+  }).then(num => {
+    console.log("The cook is" + booking.cook);
+    console.log("The start date is" + booking.dateStart);
+    console.log("The end date is" + booking.dateEnd);
+    console.log("The number of conflicting bookings is " + num);
+    if (num !== 0) {
+      message: "This cook is already book at that time";
+    } else {
+    }
   });
 
   booking
