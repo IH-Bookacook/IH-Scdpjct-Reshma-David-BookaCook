@@ -35,7 +35,11 @@
 <div>
   <h3>Availability:</h3>
   <p>
-    <%= cook.cookData.availability%>
+    <%if (cook.cookData.availability) { %>
+      <p>Avaialable</p>
+      <% }else{ %>
+        <p>Not avaialable</p>
+        <% } %>
   </p>
 </div>
 

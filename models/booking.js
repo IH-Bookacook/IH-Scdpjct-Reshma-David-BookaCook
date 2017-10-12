@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 const STATUS = ["Pending", "Done"];
 
 const bookingSchema = new Schema({
-  customerId: {
+  customer: {
     type: Schema.Types.ObjectId,
     required: true,
     ref: "User"
   },
-  cookId: {
+  cook: {
     type: Schema.Types.ObjectId,
     required: true,
     ref: "User"
