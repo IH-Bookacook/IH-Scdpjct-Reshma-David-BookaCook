@@ -1,43 +1,55 @@
-<h2>Book
-    <%= cook.name %>
+<div class="container login-container">
+
+<h2><b>Book
+    <%= cook.name %><b>
 </h2>
 
-<form action="/cooks/<%= cook._id %>/booking" method="post">
-    <div>
-        <label for="booking-date-input">
-            When would you like to book the cook ?
-        </label>
-        <input type="date" name="startDate" id="booking-date-input">
-    </div>
-    <div>
-        <label for="booking-time-input">
-            Beginning hour:
-        </label>
-        <input type="time" name="startTime" id="booking-time-input">
-    </div>
-    <div>
-        <label for="booking-time-input">
-            End hour: 
-        </label>
-        <input type="time" name="endTime" id="booking-duration-input">
-    </div>
-    <div>
-        <label for="booking-number-input">
-            How many people will be eating ?
-        </label>
-        <input type="number" name="people" id="booking-time-input">
-    </div>
-    <div>
-        <label for="booking-special-input">
-            Any special request, please advise here:
-        </label>
-        <input type="text" name="special" id="booking-time-input">
-    </div>
-    <button> Submit </button>
-</form>
+<br>
 
-<p><%= message%></p>
-
-<form action="/cooks">
-    <input type="submit" value="Find another Cook" />
-</form>
+  <form action="/cooks/<%= cook._id %>/booking" method="post">
+    <div class="field">
+      <label class="label">When would you like to book the cook ?</label>
+      <div class="control">
+        <input class="input" type="date" name="startDate" required id="text-input"
+        >
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Beginning hour :</label>
+      <div class="control">
+        <input class="input" type="time" name="startTime" required
+      >
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">End hour :</label>
+      <div class="control">
+        <input class="input" type="time" name="endTime" required id="text-input"
+        >
+      </div>
+    </div>
+            <div class="field">
+      <label class="label">How many guests ?</label>
+      <div class="control">
+        <input class="input" type="number" name="people" required id="text-input"
+        >
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">Any special request, please advise here :</label>
+      <div class="control">
+        <input class="input" type="text" name="special" required
+      placeholder="gluten free, vegan etc.">
+      </div>
+    </div>
+  <div>
+  </div>
+    <button class="button is-danger"> Book the cook ! </button>
+ <br>
+ <br>
+  <p>
+    Back to the cooks' page
+    <a href="/cooks">
+      Here.
+    </a>
+  </p>

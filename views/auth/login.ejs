@@ -1,29 +1,34 @@
-<form action="/login" method="post">
-  <div>
-    <label for="email-input"> Email </label>
-    <input type="email" name="email" id="email-input"
-      placeholder="e.g., bookcook@bookcook.company">
-  </div>
-<br>
-<br>
-  <div>
-    <label for="password-input"> Password </label>
-    <input type="password" name="password" id="password-input"
-      placeholder="e.g., ••••••••••••">
-  </div>
-<br>
-<br>
-  <button> Log In </button>
-  <% if(errorMessage) { %>
-    <div class="error">
-      <%= errorMessage %>
-    </div>
-  <% } %>
-</form>
+<div class="container login-container">
 
-<p>
-  You did not Signup?
-  <a href="/signup">
-    Create an account.
-  </a>
-</p>
+  <form action="/login" method="post">
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" name="email" id="email-input"
+        placeholder="e.g., bookcook@bookcook.company">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input" type="password" name="password" id="password-input"
+      placeholder="e.g., ••••••••••••">
+      </div>
+    </div>
+  <div>
+  </div>
+    <button class="button is-danger"> Log In </button>
+    <% if(errorMessage) { %>
+      <div class="error">
+        <%= errorMessage %>
+      </div>
+    <% } %>
+  </form>
+ <br>
+  <p>
+    You did not Signup?
+    <a href="/signup">
+      Create an account.
+    </a>
+  </p>
+</div>
