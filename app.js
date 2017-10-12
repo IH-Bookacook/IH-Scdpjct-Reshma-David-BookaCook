@@ -43,7 +43,7 @@ app.use(
     secret: "iamagoodcookandilovecooking",
     resave: false,
     saveUninitialized: true,
-    sotre: new MongoStore({ mongooseConnection: mongoose.connection })
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
 app.use(flash());

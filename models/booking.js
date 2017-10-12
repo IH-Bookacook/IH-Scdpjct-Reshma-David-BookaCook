@@ -14,9 +14,8 @@ const bookingSchema = new Schema({
     required: true,
     ref: "User"
   },
-  date: { type: Date, required: true },
-  time: { type: String, required: true },
-  duration: { type: String, required: true },
+  dateStart: { type: Date, required: true },
+  dateEnd: { type: Date, required: true },
   numberOfPeople: { type: String, required: true },
   specRequirements: { type: String },
   price: { type: String },
