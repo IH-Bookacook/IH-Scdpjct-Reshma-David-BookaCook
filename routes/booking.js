@@ -26,6 +26,8 @@ router.get("/:id/booking", ensureLoggedIn, (req, res) => {
 });
 
 router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
+  console.log("I am req.user " + req.user);
+  console.log("I am req.params " + req.params);
   const booking = new Booking({
     customerId: req.user._id,
     cookId: req.params.id,
@@ -36,10 +38,19 @@ router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
     specRequirements: req.body.special
   });
 
-  booking.save(err => {
-    if (err) return next(err);
-    res.redirect("/cooks");
-  });
+  booking
+    .save()
+    .then(savedBooking => {
+      return savedBooking
+        .populate("customerId")
+        .populate("cookId")
+        .execPopulate();
+    })
+    .then(populatedBooking => {
+      res.render("booking-conf", {
+        booking: populatedBooking
+      });
+    });
 });
 
 module.exports = router;
