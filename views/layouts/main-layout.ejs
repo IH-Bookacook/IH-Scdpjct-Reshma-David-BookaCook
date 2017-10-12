@@ -1,28 +1,38 @@
-
-
 <!DOCTYPE html>
+
 <html>
+
 <head>
 <title><%= title %></title>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+
+
 <body>
 
-<div class="topnav">
-  <a class="active" href="/">Home</a>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
 
-  <a href="/signup">Sign-up</a>
-  <a href="/login">Login</a>
-  <a href="/logout">Logout</a>
-  <a href="/becomecook">Become A Cook</a>
-    <a href="/cooks">Our Cooks</a>
-</div>
+    <%if (!user) { %>
+      <a href="/signup">Sign-up</a>
+      <a href="/becomecook">Become A Cook</a>
+      <a href="/login">Login</a>
+      <% } %>
 
-<div style="padding-left:16px">
+        <%if (user) { %>
+          <a href="/logout">Logout</a>
+          <%if (!user.isCook) { %>
+            <a href="/becomecook">Become A Cook</a>
+            <% } %>
+              <% } %>
 
-</div>
+                <a href="/cooks">Our Cooks</a>
+  </div>
 
-<%-body%>
+  <div style="padding-left:16px">
+
+  </div>
+  <%-body%>
 </body>
+
 </html>
