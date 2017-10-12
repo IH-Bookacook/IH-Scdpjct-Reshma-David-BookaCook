@@ -18,7 +18,7 @@ router.get("/", (req, res, next) => {
   );
 });
 
-router.get("/:id", ensureLoggedIn, (req, res, next) => {
+router.get("/:id", (req, res, next) => {
   User.findOne(
     {
       _id: req.params.id,

@@ -29,8 +29,8 @@ router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
   console.log("I am req.user " + req.user);
   console.log("I am req.params " + req.params);
   const booking = new Booking({
-    customerId: req.user._id,
-    cookId: req.params.id,
+    customer: req.user._id,
+    cook: req.params.id,
     date: req.body.date,
     time: req.body.time,
     duration: req.body.duration,
@@ -42,8 +42,8 @@ router.post("/:id/booking", ensureLoggedIn, (req, res, next) => {
     .save()
     .then(savedBooking => {
       return savedBooking
-        .populate("customerId")
-        .populate("cookId")
+        .populate("customer")
+        .populate("cook")
         .execPopulate();
     })
     .then(populatedBooking => {
