@@ -5,6 +5,15 @@ body {
   font-size: 16px;
   color: black;
   text-align: left;
+
+}
+body {
+  background-image: url(../images/cookh.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 }
 
 .topnav {
