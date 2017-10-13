@@ -5,11 +5,9 @@ body {
   font-size: 16px;
   color: rgb(245, 94, 97);
   text-align: left;
-
   min-height: 100vh;
-
-
 }
+
 body {
   background-image: url(../images/cookh2.jpg);
   background-size: auto;
@@ -17,14 +15,11 @@ body {
   background-position: center;
 }
 
-
-
-
 .topnav {
   overflow: hidden;
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(228, 228, 228);
-  opacity : 1;
+  opacity: 1;
 }
 
 .topnav a {
@@ -65,7 +60,7 @@ body {
 }
 
 .cooks-container {
-  margin-top: 70px;
+  margin-top: 40px;
   margin-left: 170px;
   font-size: 20px;
 }
