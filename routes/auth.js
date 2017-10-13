@@ -1,43 +1,43 @@
 const express = require("express");
-const passport = require('passport');
+const passport = require("passport");
 const router = express.Router();
-const { ensureLoggedIn, ensureLoggedOut } = require('../middlewares/auth');
+const { ensureLoggedIn, ensureLoggedOut } = require("../middlewares/auth");
 
-
-router.get('/signup', ensureLoggedOut, (req, res, next) => {
-  res.render('auth/signup', {
-    errorMessage: req.flash('error'),
+router.get("/signup", ensureLoggedOut, (req, res, next) => {
+  res.render("auth/signup", {
+    errorMessage: req.flash("error")
   });
 });
 
-
-router.get('/login',ensureLoggedOut, (req,res,next)=>{
-  res.render('auth/login',{
-    errorMessage: req.flash('error'),
+router.get("/login", ensureLoggedOut, (req, res, next) => {
+  res.render("auth/login", {
+    errorMessage: req.flash("error")
   });
 });
 
-router.get('/logout', ensureLoggedIn, (req, res, next) => {
+router.get("/logout", ensureLoggedIn, (req, res, next) => {
   req.logout();
-  res.render('auth/logout',{
-    errorMessage: req.flash('error'),
+  res.locals.user = undefined;
+  res.render("auth/logout", {
+    errorMessage: req.flash("error")
   });
 });
 
-router.post('/signup',
-  passport.authenticate('local-signup', {
-    successRedirect: '/login',
-    failureRedirect: '/signup',
-    failureFlash: true,
+router.post(
+  "/signup",
+  passport.authenticate("local-signup", {
+    successRedirect: "/login",
+    failureRedirect: "/signup",
+    failureFlash: true
   })
 );
 
 router.post(
-  '/login',
-  passport.authenticate('local-login', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true,
+  "/login",
+  passport.authenticate("local-login", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true
   })
 );
 
