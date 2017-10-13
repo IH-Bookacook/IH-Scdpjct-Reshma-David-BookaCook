@@ -13,7 +13,7 @@ body {
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
-      background-size: cover;
+  background-size: cover;
 }
 
 .topnav {
@@ -51,7 +51,7 @@ body {
   background-color: rgb(245, 94, 97);
 }
 
-.msg{
+.msg {
   font-size: 150%;
 }
 .login-container {
@@ -61,9 +61,15 @@ body {
 }
 
 .cooks-container {
-  margin-top: 40px;
-  margin-left: 140px;
+  margin: 40px 0 0 140px;
   font-size: 20px;
+}
+
+@media (max-width: 500px) {
+  .cooks-container {
+    display: table;
+    margin: 30px auto;
+  }
 }
 
 .cook-profile-container {
