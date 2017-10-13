@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
@@ -19,7 +20,7 @@ const becomecookController = require("./routes/becomecook");
 const ourcuisineController = require("./routes/ourcuisine");
 const bookingController = require("./routes/booking");
 
-mongoose.connect("mongodb://localhost/bookacook", {
+mongoose.connect(process.env.MONGODB_URI, {
   useMongoClient: true
 });
 

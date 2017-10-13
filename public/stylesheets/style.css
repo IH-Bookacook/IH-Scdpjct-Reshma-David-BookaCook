@@ -55,6 +55,9 @@ body {
   background-color: rgb(245, 94, 97);
 }
 
+.msg{
+  font-size: 150%;
+}
 .login-container {
   margin-top: 30px;
   padding-bottom: 30px;
