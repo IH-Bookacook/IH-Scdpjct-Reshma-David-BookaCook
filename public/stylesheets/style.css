@@ -8,7 +8,7 @@ body {
 
 }
 body {
-  background-image: url(../images/cookh.jpg);
+  background-image: url(../images/cookh2.jpg);
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +20,7 @@ body {
   overflow: hidden;
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(228, 228, 228);
+  opacity : 1;
 }
 
 .topnav a {
@@ -30,6 +31,7 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
   /*border-style: solid;
   border-width: 0.1px;
   /*border-color: black;*/
