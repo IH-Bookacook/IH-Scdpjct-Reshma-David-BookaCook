@@ -1,4 +1,4 @@
-<h2>Booking confirmation</h2>
+<!-- <h2>Booking confirmation</h2>
 
 <ul>
     <li>
@@ -19,4 +19,60 @@
     <li>
         <%= booking.specRequirements%>
     </li>
-</ul>
+</ul> -->
+
+
+<div class="container cook-profile-container">
+ <div class="notification">
+
+<section>
+<h1>Booking confirmation</h1>
+</section>
+
+<br>
+
+<div>
+  <h3>You have booked </h3>
+  <p>
+    <%= booking.cook.name%>
+  </p>
+</div>
+
+<br>
+
+<div>
+  <h3>your time</h3>
+  <p>
+    <%= booking.dateStart%> to <%= booking.dateEnd%>
+  </p>
+</div>
+
+<br>
+
+<div>
+  <h3>Your number of guests:</h3>
+  <p>
+    <%= booking.numberOfPeople%>
+  </p>
+</div>
+
+
+
+
+<br>
+
+<div>
+  <h3>Your requirements:</h3>
+  <p>
+    <%= booking.specRequirements%>
+  </p>
+</div>
+
+<br>
+
+<form action="/">
+  <input class="button is-danger" type="submit" value="Payment" />
+</form>
+
+</div>
+</div>
