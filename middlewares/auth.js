@@ -2,7 +2,7 @@ function ensureLoggedIn(req, res, next) {
   if (req.user) {
     next();
   } else {
-    res.redirect('/login');
+    res.redirect("/login");
   }
 }
 
@@ -10,11 +10,11 @@ function ensureLoggedOut(req, res, next) {
   if (!req.user) {
     next();
   } else {
-    res.render('/');
+    res.redirect("/");
   }
 }
 
 module.exports = {
   ensureLoggedIn: ensureLoggedIn,
-  ensureLoggedOut: ensureLoggedOut,
+  ensureLoggedOut: ensureLoggedOut
 };
