@@ -1,35 +1,63 @@
-<h2> Sign Up </h2>
+<div class="container login-container">
 
-<% if (errorMessage) { %>
-  <p class="error-message">
-    <%= errorMessage %>
-  </p>
-<% } %>
-
-<form action="/signup" method="post">
-  <div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Username" name="name" required>
-    <br>
-    <br>
-    <label><b>E-mail</b></label>
-    <input type="email" placeholder="Enter E-mail" name="email" required>
-    <br>
-    <br>
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-    <br>
-    <br>
-    <div class="clearfix">
-      <button>Sign In</button>
+  <form action="/signup" method="post">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" type="text" name="name" required id="text-input"
+        placeholder="First Name Last Name, e.g. Marc Dupont ">
+      </div>
     </div>
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <input class="input" type="email" name="email" required
+      placeholder="e.g., marc.dupont@email.com">
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">Address</label>
+      <div class="control">
+        <input class="input" type="text" name="address" required id="text-input"
+        placeholder="Full address, inc. zip code">
+      </div>
+    </div>
+            <div class="field">
+      <label class="label">Phone</label>
+      <div class="control">
+        <input class="input" type="text" name="phone" required id="text-input"
+        placeholder="+336****">
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <input class="input" type="password" name="password" required
+      placeholder="e.g., ••••••••••••">
+      </div>
+    </div>
+  <div>
   </div>
-</form>
-
-
-<p>
-  Already have an account?
-  <a href="/login">
-    Log in
-  </a>
-</p>
+    <button class="button is-danger"> Sign-up </button>
+    <% if(errorMessage) { %>
+      <div class="error">
+        <%= errorMessage %>
+      </div>
+    <% } %>
+  </form>
+ <br>
+  <p>
+    Already signed-up ?
+    <a href="/login">
+      Login here.
+    </a>
+  </p>
+   <br>
+  <p>
+    Want to sign-up as a cook, follow-up here...
+    <a href="/becomecook">
+                     Become a cook.
+    </a>
+  </p>
+</div>
+  

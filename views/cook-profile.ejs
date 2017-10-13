@@ -1,12 +1,11 @@
-<link rel="stylesheet" href="/stylesheets/cook-profile.css">
-<body>
+<div class="container cook-profile-container"> 
+ <div class="notification">
 
+<section>
+<h1>Cook profile :    <%= cook.name%></h1>
+</section>
 
-<h3>Cook profile</h3>
-
-<h2>
-  <%= cook.name%>
-</h2>
+<br>
 
 <div>
   <h3>Cuisine:</h3>
@@ -15,12 +14,16 @@
   </p>
 </div>
 
+<br>
+
 <div>
   <h3>Experience:</h3>
   <p>
     <%= cook.cookData.experience%>
   </p>
 </div>
+
+<br>
 
 <div>
   <h3>Description:</h3>
@@ -29,12 +32,16 @@
   </p>
 </div>
 
+<br>
+
 <div>
   <h3>Location:</h3>
   <p>
     <%= cook.cookData.location%>
   </p>
 </div>
+
+<br>
 
 <div>
   <h3>Availability:</h3>
@@ -47,8 +54,11 @@
   </p>
 </div>
 
+<br>
+
 <form action="/cooks/<%= cook._id %>/booking">
-  <input type="submit" value="Book this Cook !" />
+  <input class="button is-danger" type="submit" value="Book this Cook !" />
 </form>
 
-</body>
+</div>
+</div>

@@ -5,6 +5,9 @@ body {
   font-size: 16px;
   color: rgb(245, 94, 97);
   text-align: left;
+<<<<<<< HEAD
+  min-height: 100vh;
+=======
 
 }
 body {
@@ -14,6 +17,7 @@ body {
   background-position: center;
 }
 
+>>>>>>> 3de1a11faff3d07e4cebe9e34a0c41caf368c8ec
 }
 
 .topnav {
@@ -45,4 +49,38 @@ body {
 .topnav a.active {
   background-color: rgb(245, 94, 97);
   color: white;
+}
+
+.button.is-danger {
+  background-color: rgb(245, 94, 97);
+}
+
+.login-container {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  max-width: 300px;
+}
+
+.cooks-container {
+  margin-top: 70px;
+  margin-left: 170px;
+  font-size: 20px;
+}
+
+.cook-profile-container {
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 50px;
+}
+
+.cook-profile-container h1 {
+  font-size: 20px;
+}
+
+.cook-profile-container p {
+  color: rgb(128, 128, 128);
 }

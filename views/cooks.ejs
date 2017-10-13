@@ -1,23 +1,24 @@
-
 <link rel="stylesheet" href="./stylesheets/cooks-style.css">
-<h1>Our Cooks</h1>
+<div class="container cooks-container">
+  <h1>Our Cooks:</h1>
 
 
-<% if (errorMessage) { %>
- <p class="error-message">
-   <%= errorMessage %>
- </p>
-<% } %>
+  <% if (errorMessage) { %>
+  <p class="error-message">
+    <%= errorMessage %>
+  </p>
+  <% } %>
 
-<ul>
- <% cooks.forEach((cook) => { %>
-   <li>
+  <ul>
+  <% cooks.forEach((cook) => { %>
+    <li>
 
-     <p> <%= cook.cuisine %> </p>
+      <p> <%= cook.cuisine %> </p>
 
-     <a href="/cooks/<%= cook._id %>" style="color:#f2f2f2">
-      <h3> <%= cook.name %> </h3>
-     </a>
-   </li>
- <% }) %>
-</ul>
+      <a href="/cooks/<%= cook._id %>" style="color:#f2f2f2">
+        <h3> <%= cook.name %> </h3>
+      </a>
+    </li>
+  <% }) %>
+  </ul>
+</div>

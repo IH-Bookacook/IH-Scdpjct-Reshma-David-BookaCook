@@ -1,25 +1,35 @@
-<h2>Become a Cook</h2>
-<form action="/becomecook" method="post">
-  <div class="container">
-    <label><b>Cuisine</b></label>
-    <input type="text" placeholder="Cuisine" name="name" required>
-    <br>
-    <label><b>Experience</b></label>
-    <input type="text" placeholder="" name="experience" required>
-    <br>
-    <label><b>Description</b></label>
-    <input type="text" placeholder="" name="description" required>
-    <br>
-    <label><b>Location</b></label>
-    <input type="text" placeholder="" name="location" required>
-    <br>
-    <label><b>Availability</b></label>
-    <input type="text" placeholder="" name="availability" required>
+<div class="container login-container">
 
-
-
-    <div class="clearfix">
-      <button>Become Cook</button>
+  <form action="/becomecook" method="post">
+    <div class="field">
+      <label class="label">Cuisine</label>
+      <div class="control">
+        <input class="input" type="text" name="cuisine" required id="text-input"
+        placeholder="e.g. French">
+      </div>
     </div>
+    <div class="field">
+      <label class="label">Experience</label>
+      <div class="control">
+        <input class="input" type="text" name="experience" required
+      placeholder="e.g., 5 years">
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">Description</label>
+      <div class="control">
+        <input class="textarea" type="text" name="description" required id="text-input"
+        placeholder="Your background, your signature dishes etc.">
+      </div>
+    </div>
+        <div class="field">
+      <label class="label">Location</label>
+      <div class="control">
+        <input class="input" type="text" name="location" required
+      placeholder="e.g., Paris">
+      </div>
+    </div>
+  <div>
   </div>
-</form>
+    <button class="button is-danger"> Become a cook </button>
+  </form>
