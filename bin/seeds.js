@@ -4,7 +4,11 @@ const bcryptSalt = 10;
 const User = require("../models/user");
 const Booking = require("../models/booking");
 
-mongoose.connect("mongodb://localhost/bookacook", {
+const mongodbUri = process.argv[2] === 'mlab' ?
+  'mongodb://heroku_mk150zxr:4jiiu7hed7344ru5hkkt4i3g30@ds117935.mlab.com:17935/heroku_mk150zxr'
+  : 'mongodb://localhost/bookacook'
+  
+mongoose.connect(mongodbUri, {
   useMongoClient: true
 });
 
